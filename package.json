@@ -1,0 +1,22 @@
+{
+  "name": "drupal-hash",
+  "version": "0.0.1",
+  "description": "JavaScript implementation of the hashing algorithm used in Drupal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "drupal",
+    "hash",
+    "password"
+  ],
+  "author": "WeGoLook, LLC <dev@wegolook.com>",
+  "contributors": [
+    {
+      "name": "Nicholas Lindley",
+      "email": "nick.lindley@wegolook.com"
+    }
+  ],
+  "license": "ISC"
+}
