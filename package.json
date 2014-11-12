@@ -1,10 +1,14 @@
 {
   "name": "drupal-hash",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "JavaScript implementation of the hashing algorithm used in Drupal",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WeGoLook/node-drupal-hash.git"
   },
   "keywords": [
     "drupal",
@@ -18,5 +22,11 @@
       "email": "nick.lindley@wegolook.com"
     }
   ],
-  "license": "ISC"
+  "bugs": {
+    "url": "https://github.com/WeGoLook/node-drupal-hash/issues"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  }
 }
