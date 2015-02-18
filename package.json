@@ -1,6 +1,6 @@
 {
   "name": "drupal-hash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JavaScript implementation of the hashing algorithm used in Drupal",
   "main": "index.js",
   "scripts": {

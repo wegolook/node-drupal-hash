@@ -21,7 +21,7 @@ var isValid = drupalHash.checkPassword(clearPassword, passwordHash);
 var drupalHash = require('drupal-hash');
 
 var newPassword = 'superpassword';
-var passwordHash = drupalHash(newPassword);
+var passwordHash = drupalHash.hashPassword(newPassword);
 // returns something like '$S$DODRFsy.GX2iSkl2zJ4fsrGRt2S0FOWu0JSA3BqAmSayESbcY3w9'
 ```
 
