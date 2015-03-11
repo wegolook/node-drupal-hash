@@ -25,6 +25,7 @@ function _password_base64_encode(input, count) {
   var output = '';
   var i = 0;
   var itoa64 = _password_itoa64();
+  var value;
   do {
     value = ord(input[i++]);
     output += itoa64[value & 0x3f];
@@ -53,7 +54,7 @@ function _password_generate_salt(count_log2) {
   // Ensure that count_log2 is within set bounds.
   count_log2 = _password_enforce_log2_boundaries(count_log2);
   // We encode the final log2 iteration count in base 64.
-  itoa64 = _password_itoa64();
+  var itoa64 = _password_itoa64();
   output += itoa64[count_log2];
   // 6 bytes is the standard salt for a portable phpass hash.
   output += _password_base64_encode(crypto.randomBytes(6), 6);
