@@ -5,9 +5,8 @@ var MIN_HASH_COUNT = 7;
 var MAX_HASH_COUNT = 30;
 var HASH_LENGTH = 55;
 
-function hash(algo, password, raw_output) {
-  var encoding = raw_output ? 'binary' : 'hex';
-  return crypto.createHash(algo).update(password).digest(encoding);
+function hash(algo, password) {
+  return crypto.createHash(algo).update(password).digest();
 }
 
 function _password_itoa64() {
@@ -93,10 +92,13 @@ function _password_crypt(algo, password, setting) {
   // Convert the base 2 logarithm into an integer.
   var count = 1 << count_log2;
 
+  password = new Buffer(password);
+  salt = new Buffer(salt);
+
   // We rely on the hash() function being available in PHP 5.2+.
-  var hashed = hash(algo, salt + password, true);
+  var hashed = hash(algo, Buffer.concat([salt, password]));
   do {
-    hashed = hash(algo, hashed + password, true);
+    hashed = hash(algo, Buffer.concat([hashed, password]));
   } while (--count);
 
   var len = hashed.length;
