@@ -2,6 +2,8 @@
 
 This is a port of the [Drupal 7 password hashing algorithms](https://github.com/drupal/drupal/blob/7.x/includes/password.inc) developed by [WeGoLook](https://www.wegolook.com).
 
+For Node 6 support, use version 1.0.3 or higher.
+
 ## Usage
 
 ### Check existing password
