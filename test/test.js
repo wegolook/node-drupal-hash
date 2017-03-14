@@ -75,5 +75,23 @@ describe('Given a password hashed with MD5', function() {
       expect(result).to.be.true;
     });
   });
+
+  describe('When the password hash is longer than the calculated hash', function() {
+    var longPasswordHash = passwordHash + 'abcd';
+    var result = drupalHash.checkPassword(password, longPasswordHash);
+
+    it('Then the result should be false', function() {
+      expect(result).to.be.false;
+    });
+  });
+
+  describe('When the password hash is shorter than the calculated hash', function() {
+    var shortPasswordHash = passwordHash.substr(0, passwordHash.length - 3);
+    var result = drupalHash.checkPassword(password, shortPasswordHash);
+
+    it('Then the result should be false', function() {
+      expect(result).to.be.false;
+    });
+  });
 });
 

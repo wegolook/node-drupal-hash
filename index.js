@@ -153,7 +153,18 @@ function user_check_password(password, hashedPassword) {
     default:
       return false;
   }
-  return (hashed && stored_hash == hashed);
+
+  // Use a constant time comparison to prevent timing attacks.
+  if (hashed) {
+    var mismatch = hashed.length === stored_hash.length ? 0 : 1;
+    for (var i = 0, l = hashed.length; i < l; ++i) {
+      mismatch |= (hashed.charCodeAt(i) ^ stored_hash.charCodeAt(i));
+    }
+    return mismatch === 0;
+  }
+  else {
+    return false;
+  }
 }
 
 function user_needs_new_hash(hashedPassword) {
