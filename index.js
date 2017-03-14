@@ -156,7 +156,7 @@ function user_check_password(password, hashedPassword) {
 
   // Use a constant time comparison to prevent timing attacks.
   if (hashed) {
-    var mismatch = 0;
+    var mismatch = hashed.length === stored_hash.length ? 0 : 1;
     for (var i = 0, l = hashed.length; i < l; ++i) {
       mismatch |= (hashed.charCodeAt(i) ^ stored_hash.charCodeAt(i));
     }
