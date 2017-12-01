@@ -130,7 +130,7 @@ function user_check_password(password, hashedPassword) {
     // This may be an updated password from user_update_7000(). Such hashes
     // have 'U' added as the first character and need an extra md5().
     stored_hash = hashedPassword.substr(1);
-    password = crypto.hash('md5').update(password).digest('hex');
+    password = crypto.createHash('md5').update(password).digest('hex');
   }
   else {
     stored_hash = hashedPassword;
