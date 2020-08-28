@@ -92,8 +92,8 @@ function _password_crypt(algo, password, setting) {
   // Convert the base 2 logarithm into an integer.
   var count = 1 << count_log2;
 
-  password = new Buffer(password);
-  salt = new Buffer(salt);
+  password = Buffer.from(password);
+  salt = Buffer.from(salt);
 
   // We rely on the hash() function being available in PHP 5.2+.
   var hashed = hash(algo, Buffer.concat([salt, password]));
