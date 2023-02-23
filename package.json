@@ -3,8 +3,21 @@
   "version": "1.0.4",
   "description": "JavaScript implementation of the hashing algorithm used in Drupal",
   "main": "index.js",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
-    "test": "mocha --check-leaks"
+    "test": "mocha --check-leaks",
+    "precommit": "lint-staged && npm run test && npm run checkJs",
+    "checkJs": "tsc --noEmit --allowJs --checkJs index.js",
+    "postinstall": "husky install",
+    "lint": "eslint ."
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,13 +33,27 @@
     {
       "name": "Nicholas Lindley",
       "email": "nick.lindley@wegolook.com"
+    },
+    {
+      "name": "Vincent Baronnet"
     }
   ],
   "bugs": {
     "url": "https://github.com/WeGoLook/node-drupal-hash/issues"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
-    "mocha": "^2.0.1"
+    "@types/node": "^18.14.0",
+    "chai": "^4.3.7",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
   }
 }

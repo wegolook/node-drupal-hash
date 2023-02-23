@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2022",
+    "lib": ["ES2018"],
+    "declaration": false,
+    "moduleResolution": "classic",
+    "esModuleInterop": true,
+    "checkJs": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "."
+  },
+  "include": ["index.js"],
+  "exclude": ["node_modules"]
+}
