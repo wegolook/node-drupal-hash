@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/drupal-hash-v2)](https://www.npmjs.com/package/drupal-hash-v2)
+
 # Drupal Hash v2
 
 This is a port of the [Drupal 7 password hashing algorithms](https://github.com/drupal/drupal/blob/7.x/includes/password.inc)
