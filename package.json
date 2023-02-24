@@ -10,7 +10,7 @@
     "test": "mocha --check-leaks",
     "precommit": "lint-staged && npm run test && npm run checkJs",
     "checkJs": "tsc --noEmit --allowJs --checkJs index.js",
-    "postinstall": "husky install",
+    "prepare": "husky install",
     "lint": "eslint ."
   },
   "lint-staged": {
